@@ -79,18 +79,18 @@ function App() {
   // Handle the case of delete confirmation where
   // user click yes delete a specific row of rowId
   const handleRemoveClick = (rowId) => {
-    const lists = rows.filter((row) => row.id !== rowId); //only remove the selected row
-    setRows(lists);
-    console.log(lists);
-    setShowConfirm(false);
-    // let list = rows.filter((row) => row.id !== rowId); //only remove the selected row
-    // list = list.map((row, index) => ({
-    //   ...row,
-    //   id: index, //assign the new index for id
-    // }));
-    // setRows(list);
-    // console.log(list);
+    // const lists = rows.filter((row) => row.id !== rowId); //only remove the selected row
+    // setRows(lists);
+    // console.log(lists);
     // setShowConfirm(false);
+    let list = rows.filter((row) => row.id !== rowId); //only remove the selected row
+    list = list.map((row, index) => ({
+      ...row,
+      id: index, //assign the new index for id
+    }));
+    setRows(list);
+    console.log(list);
+    setShowConfirm(false);
   };
 
   // Handle the case of delete confirmation
